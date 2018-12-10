@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      CRUD
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="newMenu()">
+    <ion-item>
+      <ion-label floating>Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="datos.name" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Imagen</ion-label>
+      <ion-input type="text" [(ngModel)]="datos.image" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Descripción</ion-label>
+      <ion-textarea [(ngModel)]="datos.description" name="description"></ion-textarea>
+    </ion-item>
+    <ion-input  [(ngModel)]="datos.funcion" name="funcion" value="newMenu"></ion-input>
+    <button ion-button type="submit" block>Agregar menu</button>
+  </form>
+
+</ion-content>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -11,8 +11,7 @@ export class HomePage {
 
   constructor(
     public navCtrl: NavController,
-    private http: HttpClient,
-    public alertCtrl: AlertController
+    private http: HttpClient
     ) {
 
   }
@@ -23,29 +22,16 @@ logForm(){
     funcion: 'newMenu',
     datos: this.datos
   }
-  // console.log(newData);
-  // console.log(this.datos);
+
+  console.log(this.datos);
   this.http.post(this.apiUrl, JSON.stringify(newData))
   .subscribe(data=>{
     console.log(data);
-    if(data==='true'){
-      console.log('return');
-      this.showAlert();
-      this.navCtrl.pop();
-    }
   },
   (err)=>{
     console.log(err);
   }
   );
-}
-
-showAlert() {
-  const alert = this.alertCtrl.create({
-    title: 'Menú agregado',
-    buttons: ['OK']
-  });
-  alert.present();
 }
 
 }

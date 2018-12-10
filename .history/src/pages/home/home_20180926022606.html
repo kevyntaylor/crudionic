@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>
-      Nuevo Menú
+      CRUD
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -13,14 +13,11 @@
       <ion-input type="text" [(ngModel)]="datos.name" name="title"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Imagen</ion-label>
-      <ion-input type="text" [(ngModel)]="datos.imagen" name="title"></ion-input>
-    </ion-item>
-    <ion-item>
       <ion-label>Descripción</ion-label>
       <ion-textarea [(ngModel)]="datos.description" name="description"></ion-textarea>
     </ion-item>
     <button ion-button type="submit" block>Add Todo</button>
+    <input type="hidden" [(ngModel)]="datos.funcion" name="funcion" value="newMenu"></input>
   </form>
 
 </ion-content>

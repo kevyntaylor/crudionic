@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>Menus</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-fab top right edge  (click)="newMenu()">
+        <button ion-fab mini color="secondary"><ion-icon name="add"></ion-icon></button>
+      </ion-fab>
+  <ion-list>
+   <ion-item-sliding *ngFor="let menu of menus">
+    <button ion-item  (click)="enterToMenu(menu)">
+        <ion-avatar item-start>
+            <img src="{{menu.imagen}}">
+          </ion-avatar>
+      {{menu.nombre}}
+    <p>{{menu.descripcion}}</p>
+    </button>
+    <ion-item-options side="right">
+        <button ion-button color="primary" (click)="editMenu(menu)">
+          <ion-icon name="create"></ion-icon>
+          Editar
+        </button>
+        <button ion-button color="danger" (click)="deleteMenu(menu)">
+          <ion-icon name="trash"></ion-icon>
+          Eliminar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
