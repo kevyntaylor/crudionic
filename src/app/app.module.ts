@@ -7,12 +7,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MenusPage } from '../pages/menus/menus';
+import { EditMenuPage } from '../pages/edit-menu/edit-menu';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    MenusPage
+    MenusPage,
+    EditMenuPage
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import { MenusPage } from '../pages/menus/menus';
   entryComponents: [
     MyApp,
     HomePage,
-    MenusPage
+    MenusPage,
+    EditMenuPage
   ],
   providers: [
     StatusBar,

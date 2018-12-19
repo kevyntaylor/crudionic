@@ -23,13 +23,9 @@ logForm(){
     funcion: 'newMenu',
     datos: this.datos
   }
-  // console.log(newData);
-  // console.log(this.datos);
   this.http.post(this.apiUrl, JSON.stringify(newData))
   .subscribe(data=>{
-    console.log(data);
-    if(data==='true'){
-      console.log('return');
+    if(data){
       this.showAlert();
       this.navCtrl.pop();
     }

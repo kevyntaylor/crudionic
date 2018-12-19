@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Editar Menú</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<form [formGroup]="formMenu" (ngSubmit)="editMenu()">
+  <ion-item>
+    <ion-label>Nombre</ion-label>
+    <ion-input type="text" formControlName="nombre"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Imagen</ion-label>
+    <ion-input type="text" formControlName="imagen"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Descripción</ion-label>
+    <ion-input type="text" formControlName="descripcion"></ion-input>
+  </ion-item>
+  <button ion-button type="submit" block [disabled]="!formMenu.valid">Actualizar</button>
+</form> 
+</ion-content>

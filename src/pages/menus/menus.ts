@@ -2,6 +2,8 @@ import { HomePage } from './../../pages/home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
+import { EditMenuPage } from './../edit-menu/edit-menu';
+
 
 @IonicPage()
 @Component({
@@ -18,7 +20,6 @@ export class MenusPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MenusPage');
     this.getMenu();
 
   }
@@ -44,7 +45,9 @@ enterToMenu(datos){
 }
 
 editMenu(datos){
-  console.log('edit');
+  this.navCtrl.push(EditMenuPage,{
+    menu: datos
+  } )
 }
 
 deleteMenu(datos){
